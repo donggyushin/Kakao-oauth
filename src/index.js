@@ -14,13 +14,6 @@ const app = express();
 const conn = mysql.createConnection(mysqlKey);
 conn.connect();
 
-const sql = "select username from user";
-
-conn.query(sql, (err, results, fields) => {
-  if (err) throw err;
-  console.log(results);
-});
-
 //variables
 let port = 3000;
 
@@ -40,9 +33,13 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
+
 //exports
 
-export { sessionStore };
+export { sessionStore, conn };
 
 //listen
 app.listen(port, () => {
