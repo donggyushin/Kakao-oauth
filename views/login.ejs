@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .kakaoLogin{
+            background-color: yellow;
+            width: 177px;
+            height: 80px;
+            color: brown;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <form action="/api/auth/login" method="POST">
@@ -12,5 +30,13 @@
         <input type="password" name="password" placeholder="password">
         <button type="submit">submit</button>
     </form>
+
+    <a href="/api/auth/kakao">
+        <div class="kakaoLogin">
+            카카오 계정으로 로그인
+        </div>
+    </a>
+
+    
 </body>
 </html>
